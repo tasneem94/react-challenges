@@ -27,6 +27,7 @@ body {
   background-color: antiquewhite;
   padding: 10px;
   margin-bottom: 2px;
+  cursor: pointer;
 }
 
 .tiles .show-btn {
@@ -36,4 +37,19 @@ body {
 
 .body-text {
   background-color: rgb(254, 248, 240);
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.switch-btn {
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: rgb(253, 148, 72);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.switch-btn:hover {
+  background-color: rgba(253, 147, 72, 0.9);
 }

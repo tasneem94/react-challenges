@@ -22,7 +22,7 @@ const data = [
   {
     id: 5,
     title: "Who is the CEO of the company?",
-    body: "The CEO of the company is Jane Smith.",
+    body: "The CEO of the company is John Smith.",
   },
   {
     id: 6,

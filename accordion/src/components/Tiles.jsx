@@ -2,24 +2,45 @@ import { useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 // import data from "../data/tilesData";
-const Tiles = ({ index, title, body }) => {
+const Tiles = ({
+  index,
+  title,
+  body,
+  enable,
+  setEnable,
+  currIndex,
+  setCurrIndex,
+}) => {
   const [showBody, setShowBody] = useState(false);
   const onClickHandler = () => {
-    setShowBody((prevShowBody) => !prevShowBody);
+    enable
+      ? setShowBody((prevShowBody) => !prevShowBody)
+      : setCurrIndex((prevCurrIndex) =>
+          prevCurrIndex === index ? null : index
+        );
   };
+
   return (
     <>
-      <div className="tiles">
+      <div className="tiles" onClick={onClickHandler}>
         <div className="title">{title}</div>
-        <div className="show-btn" onClick={onClickHandler}>
-          {showBody ? (
-            <i class="fas fa-xmark"></i>
+        <div className="show-btn">
+          {enable ? (
+            showBody ? (
+              <i className="fas fa-xmark"></i>
+            ) : (
+              <i className="fas fa-angle-down"></i>
+            )
+          ) : currIndex === index ? (
+            <i className="fas fa-xmark"></i>
           ) : (
-            <i class="fas fa-angle-down"></i>
+            <i className="fas fa-angle-down"></i>
           )}
         </div>
       </div>
-      {showBody && <div className="tiles body-text">{body}</div>}
+      {enable
+        ? showBody && <div className="body-text">{body}</div>
+        : currIndex === index && <div className="body-text">{body}</div>}
     </>
   );
 };
