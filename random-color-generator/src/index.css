@@ -15,6 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
 .color-text {
@@ -25,6 +26,7 @@ body {
   padding: 10px;
   border: 5px solid black;
   border-radius: 5px;
+  background-color: #fff;
 }
 
 .color-btn {
