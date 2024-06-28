@@ -1,5 +1,10 @@
+import ColorGenerator from "./components/ColorGenerator";
 function App() {
-  return <div className="container">Random color generator</div>;
+  return (
+    <div>
+      <ColorGenerator />
+    </div>
+  );
 }
 
 export default App;
