@@ -11,14 +11,20 @@ body {
   background-color: #fff;
 }
 
-.fa-star {
-  color: black;
-  font-size: 24px;
-  margin: 0 5px; /* Adjust margin as needed */
-}
-
 .container {
+  margin: 50px 20px 0 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.fa-star {
+  color: black;
+  font-size: 24px;
+  margin: 0 2px; /* Adjust margin as needed */
+}
+
+.active {
+  transition: 0.1s ease-in-out;
+  color: gold;
 }
