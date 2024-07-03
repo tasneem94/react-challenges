@@ -15,5 +15,64 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin: 50px 20px 10px 20px;
+}
+
+.image-container {
+  position: relative;
+}
+
+.current-img {
+  width: 400x;
+  height: 300px;
+  /* margin-bottom: 20px; */
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.arrow {
+  color: white;
+  font-size: 2rem;
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 100%;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 45%;
+  right: 90%;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 45%;
+  left: 90%;
+}
+
+.circle-indicator-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  bottom: 10px;
+  left: 35%;
+}
+
+.circle-indicator {
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 100%;
+  margin-right: 5px;
+  background-color: rgb(196, 196, 196);
+}
+
+.white-circle {
+  background-color: #fff;
 }
