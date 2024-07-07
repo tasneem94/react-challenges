@@ -66,14 +66,20 @@ const ImageSlider = ({ url, page, limit }) => {
         className="arrow right-arrow"
         onClick={handleRightArrow}
       />
-      {images.length > 0 && (
-        <img
-          key={images[currentSlide].id}
-          src={images[currentSlide].download_url}
-          alt={images[currentSlide].download_url}
-          className="current-img"
-        />
-      )}
+      {images.length > 0 &&
+        images.map((item, index) => {
+          console.log(item.download_url, index, currentSlide);
+          return (
+            <img
+              key={index}
+              src={item.download_url}
+              alt={item.download_url}
+              className={
+                "current-img" + (index === currentSlide ? "" : " hidden")
+              }
+            />
+          );
+        })}
       <span className="circle-indicator-container">
         {images.map((_, index) => (
           <button
