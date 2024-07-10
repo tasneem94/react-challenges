@@ -4,6 +4,7 @@ function App() {
   return (
     <div className="container">
       <ThemeSwitch />
+      <div className="txt">Hi, there!</div>
     </div>
   );
 }
