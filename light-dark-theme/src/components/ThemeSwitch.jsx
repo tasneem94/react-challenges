@@ -7,10 +7,12 @@ const ThemeSwitch = () => {
 
   const [isChecked, setIsChecked] = useState(getItem() || false);
   const hanadleChecked = () => {
-    setIsChecked((prevState) => !prevState);
-    const newIsChecked = !isChecked;
-    document.body.classList.toggle("dark", newIsChecked);
-    setItem(newIsChecked);
+    setIsChecked((prevState) => {
+      const newIsChecked = !prevState;
+      document.body.classList.toggle("dark", newIsChecked);
+      setItem(newIsChecked);
+      return newIsChecked;
+    });
   };
 
   useEffect(() => {
