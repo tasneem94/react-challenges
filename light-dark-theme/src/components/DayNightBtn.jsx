@@ -3,12 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-export const DayNightBtn = () => {
-  const [isChecked, setIsChecked] = useState(false);
-  const hanadleChecked = () => {
-    setIsChecked((prevState) => !prevState);
-    document.body.classList.toggle("dark");
-  };
+export const DayNightBtn = ({ isChecked, hanadleChecked }) => {
   return (
     <ReactSwitch
       checked={isChecked}
