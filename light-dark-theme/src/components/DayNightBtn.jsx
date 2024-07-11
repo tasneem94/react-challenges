@@ -11,7 +11,6 @@ export const DayNightBtn = () => {
   };
   return (
     <ReactSwitch
-      className="theme-btn"
       checked={isChecked}
       onChange={hanadleChecked}
       checkedIcon={
@@ -43,6 +42,7 @@ export const DayNightBtn = () => {
       offHandleColor={"#fff"}
       onColor="#71797E"
       offColor="#A9A9A9"
+      className="react-switch"
     />
   );
 };
