@@ -4,7 +4,14 @@ function App() {
   return (
     <div className="container">
       <ThemeSwitch />
-      <div className="txt">Hi, there!</div>
+      <div className="content-section">
+        <div className="txt">Hi, there!</div>
+        <img
+          className="image"
+          src="../public/forest-trees.jpeg"
+          alt="forrest-trees"
+        />
+      </div>
     </div>
   );
 }
