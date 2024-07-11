@@ -6,11 +6,7 @@ function App() {
       <ThemeSwitch />
       <div className="content-section">
         <div className="txt">Hi, there!</div>
-        <img
-          className="image"
-          src="../public/forest-trees.jpeg"
-          alt="forrest-trees"
-        />
+        <img className="image" src="/forest-trees.jpeg" alt="forrest-trees" />
       </div>
     </div>
   );
