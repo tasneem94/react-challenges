@@ -16,9 +16,7 @@ const TreeView = () => {
         data={data}
         handleClick={handleClick}
         showChildren={showChildren}
-        setShowChildren={setShowChildren}
       />
-      ;
     </div>
   );
 };

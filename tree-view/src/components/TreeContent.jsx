@@ -1,9 +1,4 @@
-export const TreeContent = ({
-  data,
-  handleClick,
-  showChildren,
-  setShowChildren,
-}) => {
+export const TreeContent = ({ data, handleClick, showChildren }) => {
   return (
     <>
       {data.map((item) => (
@@ -17,16 +12,17 @@ export const TreeContent = ({
             )}
           </div>
 
-          {item.children && item.children.length > 0 && showChildren && (
-            <div className="children">
-              <TreeContent
-                data={item.children}
-                handleClick={handleClick}
-                showChildren={showChildren}
-                setShowChildren={setShowChildren}
-              />
-            </div>
-          )}
+          {item.children &&
+            item.children.length !== 0 &&
+            showChildren[item.id] && (
+              <div className="children">
+                <TreeContent
+                  data={item.children}
+                  handleClick={handleClick}
+                  showChildren={showChildren}
+                />
+              </div>
+            )}
         </div>
       ))}
     </>
