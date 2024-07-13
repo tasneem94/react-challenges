@@ -20,10 +20,20 @@ export const data = [
         label: "Country",
         to: "/country",
         children: [
-          { id: 8, label: "City", to: "/city" },
-          { id: 9, label: "Zip", to: "/zip" },
+          {
+            id: 8,
+            label: "City",
+            to: "/city",
+            children: [{ id: 9, label: "Area", to: "/area" }],
+          },
+          { id: 10, label: "Zip", to: "/zip" },
         ],
       },
     ],
+  },
+  {
+    id: 11,
+    label: "About",
+    to: "/about",
   },
 ];

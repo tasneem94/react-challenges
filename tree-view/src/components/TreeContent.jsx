@@ -1,3 +1,4 @@
+import { FaPlus, FaMinus } from "react-icons/fa";
 export const TreeContent = ({ data, handleClick, showChildren }) => {
   return (
     <>
@@ -7,7 +8,11 @@ export const TreeContent = ({ data, handleClick, showChildren }) => {
             <div>{item.label}</div>
             {item.children && item.children.length !== 0 && (
               <div className="plus-btn" onClick={() => handleClick(item.id)}>
-                {showChildren[item.id] ? "-" : "+"}
+                {showChildren[item.id] ? (
+                  <FaMinus color="#000" size={15} />
+                ) : (
+                  <FaPlus color="#000" size={15} />
+                )}
               </div>
             )}
           </div>

@@ -8,7 +8,7 @@ const TreeView = () => {
       ...prevShowChildren,
       [id]: !prevShowChildren[id],
     }));
-    console.log(id);
+    console.log(showChildren);
   };
   return (
     <div className="tree-view-container">
