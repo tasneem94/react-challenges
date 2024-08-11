@@ -7,6 +7,18 @@ export const ScrollIndicator = ({ url }) => {
 
   const [errorMessage, setErrorMessage] = useState("");
 
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    const scrolled = (scrollTop / docHeight) * 100;
+    setScrollPercentage(scrolled);
+    // console.log(scrollPercentage, scrollTop, docHeight);
+  };
+
   const fetchData = async (getUrl) => {
     try {
       setIsLoading(true);
@@ -28,16 +40,33 @@ export const ScrollIndicator = ({ url }) => {
     fetchData(url);
   }, [url]);
 
-  console.log(data, isLoading);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    console.log(scrollPercentage);
+  }, [scrollPercentage]);
+
+  // console.log(data, isLoading);
 
   return (
-    <div className="scroll-indicator-container">
-      <h1>Custom Scroll Indicator</h1>
-      <div className="data-container">
-        {data &&
-          data.length > 0 &&
-          data.map((dataItem) => <p>{dataItem.title}</p>)}
+    <>
+      <div className="scroll-bar"></div>
+      <div
+        className="scroll-percentage"
+        style={{ width: `${scrollPercentage}%` }}
+      ></div>
+
+      <div className="scroll-indicator-container">
+        <h1>Custom Scroll Indicator</h1>
+        <div className="data-container">
+          {data &&
+            data.length > 0 &&
+            data.map((dataItem) => <p>{dataItem.title}</p>)}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
