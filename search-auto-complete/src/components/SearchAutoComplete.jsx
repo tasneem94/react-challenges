@@ -12,7 +12,7 @@ const SearchAutoComplete = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("https://dummyjson.com/users");
+      const response = await fetch("https://dummyjson.com/users?limit=1000");
       const data = await response.json();
       console.log(data);
       if (data) {

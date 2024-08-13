@@ -16,5 +16,27 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  /* margin: 50px 20px 10px 20px; */
+}
+
+.container input {
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* .filtered-user-container {
+  list-style-type: none;
+} */
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filtered-user {
+  font-size: 20px;
+  margin-bottom: 5px;
 }
