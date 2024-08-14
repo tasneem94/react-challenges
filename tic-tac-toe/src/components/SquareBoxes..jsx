@@ -1,18 +1,4 @@
-import { useState } from "react";
-
-const SquareBoxes = () => {
-  const [isXturn, setIsXturn] = useState(true);
-  const [boxes, setBoxes] = useState(Array(9).fill(null));
-
-  const handleClick = (index) => {
-    const newBoxes = [...boxes];
-    if (newBoxes[index] === null) {
-      isXturn ? (newBoxes[index] = "X") : (newBoxes[index] = "O");
-      setIsXturn((prevIsXturn) => !prevIsXturn);
-      setBoxes(newBoxes);
-    }
-  };
-
+const SquareBoxes = ({ boxes, handleClick }) => {
   return (
     <div className="square-boxes-container">
       {boxes.map((value, index) => (
