@@ -7,7 +7,7 @@ import Details from "./pages/Details";
 
 function App() {
   return (
-    <div>
+    <div className="px-10 lg:px-20 lg:text-lg">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
