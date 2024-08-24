@@ -1,17 +1,32 @@
-import { Children, createContext, useState } from "react";
+import { Children, createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { commonSearchParam } from "../data/commonSearchParam";
 
 const GlobalContext = createContext(null);
 
 export const GlobalState = ({ children }) => {
+  const randomSearchParam =
+    commonSearchParam[Math.floor(Math.random() * commonSearchParam.length)];
+
   const [searchParam, setSearchParam] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [recipeList, setRecipeList] = useState([]);
+  const [recipeDetails, setRecipeDetails] = useState(null);
 
-  const handleSubmit = async (event) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (searchQuery, event) => {
     event.preventDefault();
-    if (searchParam.trim() !== "") setSubmitted(true);
+
+    if (searchParam.trim() !== "") {
+      setSubmitted(true);
+    } else {
+      return;
+    }
+
+    setLoading(true);
 
     try {
       const response = await fetch(
@@ -23,18 +38,27 @@ export const GlobalState = ({ children }) => {
       if (data?.data?.recipes) {
         setRecipeList(data.data.recipes);
         setLoading(false);
-        // setSearchParam("");
+        setSearchParam("");
         setError(null);
+      } else {
+        setRecipeList([]);
+        setError("No recipes found.");
       }
+
+      navigate("/");
     } catch (e) {
       console.log(e);
       setError(e);
       setLoading(false);
-      //   setSearchParam("");
+      setSearchParam("");
       setRecipeList([]);
     }
   };
   console.log(loading, recipeList);
+
+  useEffect(() => {
+    handleSubmit();
+  }, [randomSearchParam]);
 
   return (
     <GlobalContext.Provider
@@ -45,7 +69,10 @@ export const GlobalState = ({ children }) => {
         loading,
         error,
         recipeList,
+        setRecipeList,
         submitted,
+        recipeDetails,
+        setRecipeDetails,
       }}
     >
       {children}
