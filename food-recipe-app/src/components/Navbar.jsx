@@ -6,9 +6,9 @@ const Navbar = () => {
     useContext(GlobalContext);
   return (
     <nav className="flex justify-between items-center py-8 container mx-auto flex-col lg:flex-row gap-5 lg:gap-0">
-      <div className="text-2xl lg:text-3xl font-semibold">
-        <NavLink to={"/"} className="text-black cursor-pointer">
-          Food Recipe
+      <div className="text-2xl lg:text-3xl text-green-700 font-semibold tracking-wider ">
+        <NavLink to={"/"} className="cursor-pointer">
+          FOOD RECIPE
         </NavLink>
       </div>
       <form onSubmit={handleSubmit}>

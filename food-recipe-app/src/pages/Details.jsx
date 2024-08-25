@@ -35,7 +35,7 @@ const Details = () => {
         <span className="text-sm text-cyan-700 font-medium">
           {recipeDetails?.recipe?.publisher}
         </span>
-        <div className="text-2xl font-bold truncate">
+        <div className="text-3xl font-bold truncate">
           {recipeDetails?.recipe?.title}
         </div>
         <div>
