@@ -3,7 +3,12 @@ import { useParams } from "react-router-dom";
 import GlobalContext from "../context/globalContext";
 
 const Details = () => {
-  const { recipeDetails, setRecipeDetails } = useContext(GlobalContext);
+  const {
+    recipeDetails,
+    setRecipeDetails,
+    handleAddToFavorites,
+    favoritesList,
+  } = useContext(GlobalContext);
   const { id } = useParams();
   const getRecipeDetails = async () => {
     const response = await fetch(
@@ -39,8 +44,15 @@ const Details = () => {
           {recipeDetails?.recipe?.title}
         </div>
         <div>
-          <button className="px-8 py-3 rounded-lg text-sm uppercase font-medium tracking-wider mt-3 inline-block shadow-md bg-black text-white hover:bg-gray-800">
-            Save as Favorites
+          <button
+            onClick={() => handleAddToFavorites(recipeDetails?.recipe)}
+            className="px-8 py-3 rounded-lg text-sm uppercase font-medium tracking-wider mt-3 inline-block shadow-md bg-black text-white hover:bg-gray-800"
+          >
+            {favoritesList.findIndex(
+              (favRecipe) => favRecipe.id === recipeDetails?.recipe.id
+            ) === -1
+              ? "Add to favorites"
+              : "Remove from favorites"}
           </button>
         </div>
         <div>

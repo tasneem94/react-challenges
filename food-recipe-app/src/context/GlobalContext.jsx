@@ -9,11 +9,11 @@ const randomSearchParam =
 
 export const GlobalState = ({ children }) => {
   const [searchParam, setSearchParam] = useState("");
-
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [recipeList, setRecipeList] = useState([]);
   const [recipeDetails, setRecipeDetails] = useState(null);
+  const [favoritesList, setFavoritesList] = useState([]);
 
   const navigate = useNavigate();
 
@@ -55,6 +55,20 @@ export const GlobalState = ({ children }) => {
     }
   };
 
+  const handleAddToFavorites = (currentRecipe) => {
+    const copyFavoritesList = [...favoritesList];
+    const recipeIndex = copyFavoritesList.findIndex(
+      (recipe) => recipe.id === currentRecipe.id
+    );
+    if (recipeIndex === -1) {
+      copyFavoritesList.push(currentRecipe);
+    } else {
+      copyFavoritesList.splice(recipeIndex, 1);
+    }
+    setFavoritesList(copyFavoritesList);
+    console.log(favoritesList);
+  };
+
   useEffect(() => {
     fetchRecipes(randomSearchParam);
   }, []);
@@ -71,6 +85,8 @@ export const GlobalState = ({ children }) => {
         setRecipeList,
         recipeDetails,
         setRecipeDetails,
+        favoritesList,
+        handleAddToFavorites,
       }}
     >
       {children}
