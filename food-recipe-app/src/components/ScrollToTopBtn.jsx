@@ -30,7 +30,7 @@ const ScrollToTopBtn = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="text-green-700 text-3xl opacity-50 hover:text-green-800 hover:opacity-100 transition duration-200"
+          className="text-green-700 dark:text-sky-400 text-3xl opacity-50  hover:opacity-100 transition duration-200"
         >
           <FontAwesomeIcon icon={faCircleArrowUp} />
         </button>

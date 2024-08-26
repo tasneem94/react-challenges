@@ -37,7 +37,7 @@ const Details = () => {
         </div>
       </div>
       <div className="flex flex-col gap-3">
-        <span className="text-sm text-cyan-700 font-medium">
+        <span className="text-sm text-cyan-700 dark:text-cyan-600 font-medium">
           {recipeDetails?.recipe?.publisher}
         </span>
         <div className="text-3xl font-bold truncate">
@@ -46,7 +46,7 @@ const Details = () => {
         <div>
           <button
             onClick={() => handleAddToFavorites(recipeDetails?.recipe)}
-            className="px-8 py-3 rounded-lg text-sm uppercase font-medium tracking-wider mt-3 inline-block shadow-md bg-black text-white hover:bg-gray-800"
+            className="px-8 py-3 rounded-lg text-sm uppercase font-medium tracking-wider mt-3 inline-block shadow-md bg-black text-white hover:bg-gray-800 dark:bg-slate-800 dark:text-white/90 dark:hover:bg-slate-900"
           >
             {favoritesList.findIndex(
               (favRecipe) => favRecipe.id === recipeDetails?.recipe.id
@@ -56,7 +56,7 @@ const Details = () => {
           </button>
         </div>
         <div>
-          <div className="text-2xl font-bold text-cyan-900 mb-3">
+          <div className="text-2xl font-bold text-cyan-900 dark:text-cyan-500 mb-3">
             Ingredients:
           </div>
           <ul className="flex flex-col gap-3">
