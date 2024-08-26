@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import GlobalContext from "../context/GlobalContext";
+import { DayNightBtn } from "./DayNightBtn";
+import ScrollToTopBtn from "./ScrollToTopBtn";
 const Navbar = () => {
   const { searchParam, setSearchParam, handleSubmit } =
     useContext(GlobalContext);
   return (
-    <nav className="flex justify-between items-center py-8 container mx-auto flex-col lg:flex-row gap-5 lg:gap-0">
+    <nav className=" flex justify-between items-center py-8 container mx-auto flex-col lg:flex-row gap-5 lg:gap-0">
       <div className="text-2xl lg:text-3xl text-green-700 font-semibold tracking-wider ">
         <NavLink to={"/"} className="cursor-pointer">
           FOOD RECIPE
@@ -21,7 +23,7 @@ const Navbar = () => {
           className="bg-white/75 px-8 py-3 rounded-full outline-none lg:w-96 shadow-lg shadow-gray-200 focus:shadow-gray-300"
         />
       </form>
-      <ul className="flex gap-5">
+      <ul className="flex gap-5 lg:mr-3">
         <li>
           <NavLink
             to={"/"}
@@ -39,6 +41,10 @@ const Navbar = () => {
           </NavLink>
         </li>
       </ul>
+      <div className="fixed top-8 right-4 lg:top-11 z-50">
+        <DayNightBtn />
+      </div>
+      <ScrollToTopBtn />
     </nav>
   );
 };
