@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import GlobalContext from "../context/globalContext";
+import GlobalContext from "../context/GlobalContext";
 import RecipeList from "../components/RecipeList";
 
 const Favorites = () => {
