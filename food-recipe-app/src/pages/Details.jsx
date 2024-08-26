@@ -32,7 +32,7 @@ const Details = () => {
           <img
             src={recipeDetails?.recipe?.image_url}
             alt="img"
-            className="w-full h-full object-cover group-hover:scale-105 duration-300"
+            className="w-full h-full object-cover group-hover:scale-105 duration-300 dark:opacity-90 dark:grayscale-[10%]"
           />
         </div>
       </div>

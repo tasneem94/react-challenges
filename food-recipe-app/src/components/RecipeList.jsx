@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const RecipeList = ({ item }) => {
   return (
     <div className="flex flex-col w-80 overflow-hidden bg-white/75 dark:bg-slate-800 shadow-xl gap-5 p-5 border-2 rounded-2xl border-white dark:border-slate-700">
-      <div className="h-40 flex justify-center overflow-hidden items-center rounded-xl">
+      <div className="h-40 flex justify-center overflow-hidden items-center rounded-xl dark:opacity-90 dark:grayscale-[10%]">
         <img src={item?.image_url} alt="recipe-item" className="w-full" />
       </div>
       <div>
