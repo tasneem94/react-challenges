@@ -20,7 +20,7 @@ const Navbar = () => {
           value={searchParam}
           onChange={(e) => setSearchParam(e.target.value)}
           placeholder="Search Recipe..."
-          className="bg-white/75 dark:bg-slate-600 px-8 py-3 rounded-full outline-none lg:w-96 shadow-lg shadow-gray-200 focus:shadow-gray-300 dark:shadow-gray-700 dark:focus:shadow-gray-800"
+          className="bg-white/75 dark:bg-slate-600  px-8 py-3 rounded-full outline-none lg:w-96 shadow-lg shadow-gray-200 dark:shadow-gray-700 focus:shadow-gray-300  dark:focus:shadow-gray-800"
         />
       </form>
       <ul className="flex gap-5 lg:mr-3">

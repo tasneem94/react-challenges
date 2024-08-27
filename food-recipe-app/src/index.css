@@ -4,6 +4,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Ensures that the background color remains consistent when selecting an autocomplete option */
+
+/* Light Mode - Autocomplete Styling */
+/* input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.75) inset !important;
+  box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.75) inset !important;
+  -webkit-text-fill-color: #1f2937 !important;
+} */
+
+/* Dark Mode - Autocomplete Styling */
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(87, 97, 110, 0.75) inset !important;
+  box-shadow: 0 0 0px 1000px rgba(71, 85, 105, 0.75) inset !important;
+  -webkit-text-fill-color: #e5e7eb !important;
+}
+
 * {
   padding: 0;
   margin: 0;
