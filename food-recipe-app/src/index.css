@@ -19,8 +19,8 @@ input:-webkit-autofill:focus {
 .dark input:-webkit-autofill,
 .dark input:-webkit-autofill:hover,
 .dark input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px rgba(87, 97, 110, 0.75) inset !important;
-  box-shadow: 0 0 0px 1000px rgba(71, 85, 105, 0.75) inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(87, 97, 110) inset !important;
+  box-shadow: 0 0 0px 1000px rgba(71, 85, 105) inset !important;
   -webkit-text-fill-color: #e5e7eb !important;
 }
 
